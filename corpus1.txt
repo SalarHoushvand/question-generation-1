@@ -1,0 +1,12 @@
+the elements of the power set are themselves sets.A set is an unordered collection of different elements. A set can be written explicitly by listing its elements using set bracket. If the order of the elements is changed or any element of a set is repeated, it does not make any changes in the set. an apple is a fruit.Universal set contains any relevant elements and depends on application. An empty set is a subset of every set including itself.
+The power set is a set of all subsets of a set. It includes the null set and also the set itself.
+The power set is a set of sets.the elements of the power set are themselves sets.An ordered pair is simply a pair of objects. Ordered pairs are also called 2-tuples or sequences. 
+Language modeling is the task of assigning a probability to sentences in a language.
+Perfect performance at the language modeling task, namely predicting the next word in a
+sequence with a number of guesses that is the same as or lower than the number of guesses required
+by a human participant, is an indication of human level intelligence,² and is unlikely to be achieved
+in the near future.language modeling is a
+crucial components in real-world applications such as machine-translation and automatic speech
+recognition, where the system produces several translation or transcription hypotheses, which are
+then scored by a language model. For these reasons, language modeling plays a central role in
+natural-language processing, AI, and machine-learning research.The smoothing techniques are intricate and based on back off to lower-order events.
