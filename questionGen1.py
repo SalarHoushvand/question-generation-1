@@ -55,14 +55,14 @@ for i in range(0, (len(list3_words) - 1)):
     words_final.append(words_list_final)
     words_list_final = []
 
-print('\n\n{:-^160}'.format(' Tags ') + '\n\n')
+print('\n\n{:-^160}'.format(' Tags and Words ') + '\n\n')
 for i in range(0, len(tags_final)):
     print(tags_final[i])
     print(words_final[i])
 
-print('\n\n{:-^160}'.format(' Words ') + '\n\n')
-for i in range(0, len(tags_final)):
-    print(words_final[i])
+#print('\n\n{:-^160}'.format(' Words ') + '\n\n')
+#for i in range(0, len(tags_final)):
+#    print(words_final[i])
 
 for i in range(0, len(tags_final)):
     for j in range(0, len(tags_final[i])):
@@ -83,6 +83,7 @@ li8 = ['VBD', 'NNS', 'VBP', 'RB', 'VBN']
 li9 = ['NN', 'NN', 'VBZ', 'DT']
 li10 = ['NN', 'NN', 'VBZ', 'JJ']
 li11 = ['DT', 'VBG', 'NNS', 'VBP', 'JJ']
+li12 = ['DT', 'VBZ', 'DT', 'VBN', 'JJ']
 
 # make lists to add questions and answers
 questions = []
@@ -143,6 +144,11 @@ for i in range(0, len(tags_final)):
     if tags_final[i][0:5] == li11[0:5]:
         questions.append(
             f'How {words_final[i][3]} {words_final[i][0].lower()} {words_final[i][1]} {words_final[i][2]} ?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:5] == li12[0:5]:
+        questions.append(
+            f'What {words_final[i][0].lower()} {words_final[i][1]} ?')
         answers.append(f'{" ".join(words_final[i])}.')
 
 for i in range(0, len(questions)):
