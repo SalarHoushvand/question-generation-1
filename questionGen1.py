@@ -60,8 +60,8 @@ for i in range(0, len(tags_final)):
     print(tags_final[i])
     print(words_final[i])
 
-#print('\n\n{:-^160}'.format(' Words ') + '\n\n')
-#for i in range(0, len(tags_final)):
+# print('\n\n{:-^160}'.format(' Words ') + '\n\n')
+# for i in range(0, len(tags_final)):
 #    print(words_final[i])
 
 for i in range(0, len(tags_final)):
@@ -84,6 +84,16 @@ li9 = ['NN', 'NN', 'VBZ', 'DT']
 li10 = ['NN', 'NN', 'VBZ', 'JJ']
 li11 = ['DT', 'VBG', 'NNS', 'VBP', 'JJ']
 li12 = ['DT', 'VBZ', 'DT', 'VBN', 'JJ']
+li13 = ['JJ', 'NNS', 'VB', 'DT']
+li14 = ['DT', 'JJ', 'NN', 'IN', 'JJ', 'NNS', 'IN', 'NN', 'VBZ']
+li15 = ['WRB', 'VBG', 'NNS', ',']
+li16 = ['DT', 'NN', 'IN', 'NNS', 'IN', 'NNS', 'VBZ', 'VBD']
+li17 = ['DT', 'NN', 'RB', 'VBZ']
+li18 = ['EX', 'VBP', 'CD', 'JJ', 'NNS', 'IN', 'JJ', 'NN', 'NNS']
+li19 = ['WRB', 'VBG', 'DT', 'NN']
+li20 = ['NNS', 'MD', 'VB', 'VBN']
+li21 = ['NNP', 'JJ', 'NNS', 'VBP']
+li22 = ['JJ', 'JJ', 'NNS', 'VBP']
 
 # make lists to add questions and answers
 questions = []
@@ -151,5 +161,58 @@ for i in range(0, len(tags_final)):
             f'What {words_final[i][0].lower()} {words_final[i][1]} ?')
         answers.append(f'{" ".join(words_final[i])}.')
 
+    if tags_final[i][0:4] == li13[0:4]:
+        questions.append(
+            f'What {words_final[i][0].lower()} {words_final[i][1]} {words_final[i][2]}?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:9] == li14[0:9]:
+        questions.append(
+            f'What {words_final[i][8].lower()} {words_final[i][0].lower()} {words_final[i][1]} '
+            f'{words_final[i][2]} {words_final[i][3]} '
+            f'{words_final[i][4]} {words_final[i][5]} {words_final[i][6]} {words_final[i][7]}?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:4] == li15[0:4]:
+        questions.append(
+            f'What happens {words_final[i][0].lower()} {words_final[i][1]} {words_final[i][2]}?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:8] == li16[0:8]:
+        questions.append(
+            f'How {words_final[i][0].lower()} {words_final[i][1]} {words_final[i][2]} {words_final[i][3]} '
+            f'{words_final[i][4]} {words_final[i][5]} {words_final[i][6]} {words_final[i][7]}?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:4] == li17[0:4]:
+        questions.append(f'What else {words_final[i][0].lower()} {words_final[i][1]} {words_final[i][3]} ?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:8] == li18[0:8]:
+        questions.append(f'What {words_final[i][1]} {words_final[i][2]} {words_final[i][3]} '
+                         f'{words_final[i][4]} {words_final[i][5]} {words_final[i][6]} {words_final[i][7]}'
+                         f' {words_final[i][8]}?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:4] == li19[0:4]:
+        questions.append(f'What happens {words_final[i][0].lower()} {words_final[i][1]} {words_final[i][2]} '
+                         f'{words_final[i][3]} ?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:4] == li20[0:4]:
+        questions.append(f'What {words_final[i][0].lower()} {words_final[i][1]} {words_final[i][2]} '
+                         f'{words_final[i][3]} ?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:4] == li21[0:4]:
+        questions.append(f'What {words_final[i][3]} {words_final[i][0].lower()} {words_final[i][1]} '
+                         f'{words_final[i][2]} ?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:4] == li22[0:4]:
+        questions.append(f'What {words_final[i][3]} {words_final[i][0].lower()} {words_final[i][1]} '
+                         f'{words_final[i][2]} ?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
 for i in range(0, len(questions)):
-    print(f'{questions[i]}  {answers[i]}')
+    print(f'{int(questions.index(questions[i])) + 1} - {questions[i]}  {answers[i]}')
