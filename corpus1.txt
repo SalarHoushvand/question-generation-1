@@ -16,6 +16,7 @@ the network also learns to combine word vectors in a way that is useful for
 prediction.
 There are two major kinds of neural network architectures, that can be combined in various
 ways: feed-forward networks and recurrent/recursive networks.
+
 When feeding the network with a set of input components, it learns to combine them in
 a meaningful way. MLPs can be used whenever a linear model was previously used.
 
@@ -23,3 +24,22 @@ Convolutional feed-forward networks are specialized architectures that excel at 
 local patterns in the data: they are fed arbitrarily sized inputs, and are capable of extracting meaningful
 local patterns that are sensitive to word order, regardless of where they appear in the input.
 Recurrent neural networks are specialized models for sequential data.
+
+The sequence-to-sequence approach is very general.
+
+the input is a base word and a
+desired inflection request.
+
+The conditioned-generation approach is very flexible.
+The
+ intuition is that different users have different communication styles, based on their age, gender,
+social role, background knowledge, personality traits and many other latent factors.
+
+the network can learn to adapt its predictions while
+still using an underlying language model as a backbone.
+
+the network also learns user embeddings.
+
+The generator can then use these vectors as a read-only memory representing the conditioning
+sentence.
+

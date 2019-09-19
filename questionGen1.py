@@ -8,12 +8,6 @@ import os
 text1 = filehandle = open('corpus1.txt')
 text = filehandle.read()
 
-# text = '''Timmie Willie is a country mouse who is accidentally transported
-# to a city in a vegetable basket. When he wakes up, he finds himself in a
-# party and makes a friend. When he is unable to bear the city life,
-# he returns to his home but invites his friend to the village. When his friend visits him,
-# something similar happens.'''
-
 # removes \n from the text and adds each line to lines_list
 lines_list = text.splitlines()
 # joins the elements of lines_list and makes raw text
@@ -94,6 +88,10 @@ li19 = ['WRB', 'VBG', 'DT', 'NN']
 li20 = ['NNS', 'MD', 'VB', 'VBN']
 li21 = ['NNP', 'JJ', 'NNS', 'VBP']
 li22 = ['JJ', 'JJ', 'NNS', 'VBP']
+li23 = ['DT', 'JJ', 'NN', 'VBZ', 'RB']
+li24 = ['DT', 'NN', 'VBZ', 'IN']
+li25 = ['DT', 'NN', 'MD', 'VB']
+li26 = ['DT', 'NN', 'MD']
 
 # make lists to add questions and answers
 questions = []
@@ -212,6 +210,24 @@ for i in range(0, len(tags_final)):
     if tags_final[i][0:4] == li22[0:4]:
         questions.append(f'What {words_final[i][3]} {words_final[i][0].lower()} {words_final[i][1]} '
                          f'{words_final[i][2]} ?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:5] == li23[0:5]:
+        questions.append(f'How {words_final[i][3]} {words_final[i][0].lower()} {words_final[i][1]} '
+                         f'{words_final[i][2]} ?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:4] == li24[0:4]:
+        questions.append(f'What {words_final[i][2]} {words_final[i][0].lower()} {words_final[i][1]} ?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:4] == li25[0:4]:
+        questions.append(f'How {words_final[i][0].lower()} {words_final[i][1]} {words_final[i][2]} '
+                         f'{words_final[i][3]} ?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:3] == li26[0:3]:
+        questions.append(f'What {words_final[i][0].lower()} {words_final[i][1]} {words_final[i][2]} do ?')
         answers.append(f'{" ".join(words_final[i])}.')
 
 for i in range(0, len(questions)):
