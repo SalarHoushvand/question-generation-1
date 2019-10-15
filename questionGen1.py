@@ -92,6 +92,10 @@ li23 = ['DT', 'JJ', 'NN', 'VBZ', 'RB']
 li24 = ['DT', 'NN', 'VBZ', 'IN']
 li25 = ['DT', 'NN', 'MD', 'VB']
 li26 = ['DT', 'NN', 'MD']
+li27 = ['DT', 'JJ', 'NN', 'VBZ']
+li28 = ['DT', 'NNS', 'VBP']
+li29 = ['RBS', 'IN', 'DT', 'NNS', 'VB']
+li30 = ['DT', 'JJ', 'NN', 'IN', 'DT', 'JJ', 'NNS']
 
 # make lists to add questions and answers
 questions = []
@@ -229,6 +233,25 @@ for i in range(0, len(tags_final)):
     if tags_final[i][0:3] == li26[0:3]:
         questions.append(f'What {words_final[i][0].lower()} {words_final[i][1]} {words_final[i][2]} do ?')
         answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:4] == li27[0:4]:
+        questions.append(f'What {words_final[i][3]} {words_final[i][0].lower()} {words_final[i][1]} {words_final[i][2]} ?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:3] == li28[0:3]:
+        questions.append(f'What {words_final[i][0].lower()} {words_final[i][1]} {words_final[i][2]} ?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:5] == li29[0:5]:
+        questions.append(f'What {words_final[i][0].lower()} {words_final[i][1]} {words_final[i][2]} {words_final[i][3]} {words_final[i][4]}?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+    if tags_final[i][0:7] == li30[0:7]:
+        questions.append(f'What {words_final[i][7]} {words_final[i][0].lower()} {words_final[i][1]} {words_final[i][2]} {words_final[i][3]} {words_final[i][4]} {words_final[i][5]} {words_final[i][6]} ?')
+        answers.append(f'{" ".join(words_final[i])}.')
+
+
+
 
 for i in range(0, len(questions)):
     print(f'{int(questions.index(questions[i])) + 1} - {questions[i]}  {answers[i]}')

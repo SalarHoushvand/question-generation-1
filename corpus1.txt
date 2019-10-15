@@ -43,3 +43,15 @@ the network also learns user embeddings.
 The generator can then use these vectors as a read-only memory representing the conditioning
 sentence.
 
+An appealing method is to mix a monolingual window-based approach with a multilingual
+approach.
+
+These approaches have the benefit of producing very small model sizes.
+
+most of the features represent discrete, categorical features such as words, letters, and part-of-speech tags.
+
+The main benefit of the dense representations is in generalization power.
+
+This argument assumes that we saw enough occurrences of the word cat such that
+its vector will be similar to that of dog, or otherwise that "good" vectors are somehow given to
+us. 
